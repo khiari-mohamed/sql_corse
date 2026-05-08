@@ -603,7 +603,7 @@ JOIN livres ON ventes.id_livre = livres.id_livre;`} label="JOIN - Ventes avec ti
   return (
     <div className="max-w-4xl mx-auto px-4 py-6">
       <SectionTitle icon={<BookOpen className="w-8 h-8" />} title="Cours Complet" subtitle="Tout le programme, simplifié et illustré" />
-      <div className="flex gap-4">
+      <div className="flex flex-col md:flex-row gap-4">
         {/* Topic list */}
         <div className="w-48 flex-shrink-0 hidden md:block">
           <div className="sticky top-4 space-y-1">
@@ -925,7 +925,7 @@ function CheatsheetPage() {
       <div className="mb-8">
         <h3 className="text-white font-black mb-2 text-lg">🃏 Flashcards (clique pour voir la réponse)</h3>
         <p className="text-gray-400 text-sm mb-4">Clique sur chaque carte pour retourner la réponse.</p>
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3">
           {flashcards.map((c, i) => (
             <div key={i} onClick={() => setFlip(f => ({ ...f, [i]: !f[i] }))}
               className={`cursor-pointer rounded-xl border p-4 min-h-24 flex items-center justify-center text-center transition-all duration-300 ${flip[i] ? "bg-emerald-500/10 border-emerald-500/40" : "bg-gray-800/50 border-gray-700 hover:border-gray-500"}`}>
